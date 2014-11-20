@@ -1,0 +1,269 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: 481px and Up Stylesheet
+
+This stylesheet is loaded for larger devices. It's set to 
+481px because at 480px it would load on a landscaped iPhone.
+This isn't ideal because then you would be loading all those
+extra styles on that same mobile connection. 
+
+A word of warning. This size COULD be a larger mobile device,
+so you still want to keep it pretty light and simply expand
+upon your base.scss styles.
+
+******************************************************************/
+
+.module {
+	width:48%;
+	float:left;
+	
+
+	&.left {
+		margin-right:2%;
+		padding-right:2%;
+		border-right:1px dashed $blue;
+	}
+}
+
+#ut-logo {
+	float: left;
+	margin:.4em 0 0 0;
+	padding-left:2%;
+	width:42%;
+}
+.searchBox {
+	width:42%;
+	padding:0 2% 0 0;
+	text-align:right;
+	font-size:.7em;
+	float:right;
+	margin:.4em 2% 0em 0;
+
+	.text_input {
+		width:70%;
+		color:darken($gray, 15%);
+	}
+
+	.button {
+		margin-bottom:0;
+	}
+}
+
+.home-flexslider {
+	.copy {
+		span {
+			display:inline;
+		}
+	}
+}
+
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+/* entry content */
+.entry-content {
+	
+	/* at this larger size, we can start to align images */
+	.alignleft, img.alignleft { 
+		margin-right: 1.5em; 
+		display: inline; 
+		float: left; 
+	}
+	.alignright, img.alignright { 
+		margin-left: 1.5em; 
+		display: inline; 
+		float: right; 
+	}
+	.aligncenter, img.aligncenter { 
+		margin-right: auto; 
+		margin-left: auto; 
+		display: block; 
+		clear: both; 
+	}
+			
+} /* end .entry-content */
+
+/* FACULTY DIRECTORY */
+
+.single-directory {
+	#main {
+		width:98%;
+	}
+}
+
+.facInfo.first {
+	padding:0 0 2%;
+}
+.facAddr {
+
+	&.last {
+		padding:0 0 2%;
+	}
+}
+
+.facImg {
+	width:20%;
+}
+
+.facItem {
+	display: inline-block;
+	font-size:.8em;
+
+	&:after {
+		content: "\002c \00a0 \00a0";
+	}
+}
+
+.facEnd {
+	&:after {
+		content: "";
+	}
+}
+
+.facDetails {
+	display: inline-block;
+	font-size:.8em;
+	margin-right:1em;
+	float:right;
+}
+
+.dirTable {
+	margin-bottom:1.677em;
+	border:1px solid $taupe;
+
+	td, th {
+		border-bottom:1px solid $taupe;
+		padding:.6777em .4em;
+	}
+
+	tr:nth-child(odd) {
+		background-color:lighten($taupe, 24%);
+	}
+
+	th {
+		background-color:$blue;
+		color:$white;
+		padding:.5em .677em;
+		font-weight:bold;
+		font-size: 1.2em;
+		text-align:left;
+
+	}
+
+	&:first-of-type {
+		.jumpUp {
+			display: none;
+		}
+	}
+
+	.jumpUp {
+		color:$white;
+	}
+
+}
+
+.jumpUp {
+		float:right;
+		display: inline-block;
+		font-size:.8em;
+		text-decoration:none;
+
+		&:after {
+			content:"\00a0 \25b2";
+		}
+	}
+
+.dirImg {
+	width:12%;
+	padding:.2em 0;
+	text-align: center;
+	vertical-align:top;
+
+	a {
+		display:block;
+		line-height:0;
+		margin:.3em auto 0;
+	}
+	img {
+		width:90%;
+		border:.2em solid $taupe;
+		margin:0;
+	}
+}
+
+.dirInfo {
+	width:75%;
+	vertical-align:top;
+
+	p {
+		margin-bottom:0;
+	}
+
+	a {
+		text-decoration: none;
+		margin-bottom:.2em;
+		display:inline-block;
+
+		&.facName {
+			font-weight:bold;
+			margin-bottom:0;
+		}
+	}
+}
+
+.facName {
+	font-size:1.1em;
+}
+
+.jumpList {
+	text-align:left;
+	font-size:.8em;
+	padding:0 0;
+
+	ul {
+		margin:0;
+		padding:0;
+		display:inline-block;
+	}
+
+	li {
+		display: inline-block;
+		margin:0;
+		padding:0 .4em;
+		border-right: 1px solid $taupe;
+		line-height:1em;
+		
+		&:last-of-type {
+			border-right: none;	
+		}
+
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+}
+
+.printLink {
+	float:right;
+	font-size:.5em;
+	display:inline-block;
+	margin-top:1em;
+	font-weight:bold;
+}
+
+
+.screen-reader-text { /* Reusable, toolbox kind of class */
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}

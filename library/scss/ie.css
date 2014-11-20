@@ -1,0 +1,811 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+/*
+Remember, all the BASE styles are called already since IE can
+read those. Below, we need to import only the stuff IE can't 
+understand (what's inside the media queries). We also need to
+import the mixins file so SASS can understand the variables.
+*/
+/* import mixins */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques like box shadow and
+border-radius.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+******************************************************************/
+/*********************
+CLEARFIXIN'
+*********************/
+.clearfix {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: "";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+/*********************
+TOOLS
+*********************/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/* #E9E1CF */
+/* #CC6633; */
+/*  */
+/* #007AC0 */
+/* #7FCEF0 */
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+/*********************
+TYPOGRAPHY
+*********************/
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+/*	@font-face {
+    	font-family: 'Font Name';
+    	src: url('library/fonts/font-name.eot');
+    	src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
+             url('library/fonts/font-name.woff') format('woff'),
+             url('library/fonts/font-name.ttf') format('truetype'),
+             url('library/fonts/font-name.svg#font-name') format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+*/
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.alert-help, .alert-info, .alert-error, .alert-success {
+  margin: 10px;
+  padding: 5px 18px;
+  border: 1px solid; }
+
+.alert-help {
+  border-color: #e8dc59;
+  background: #ebe16f; }
+
+.alert-info {
+  border-color: #bfe4f4;
+  background: #d5edf8; }
+
+.alert-error {
+  border-color: #f8cdce;
+  background: #fbe3e4; }
+
+.alert-success {
+  border-color: #deeaae;
+  background: #e6efc2; }
+
+/*********************
+BORDER RADIUS
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include border-radius(4px 4px 0 0);
+*/
+/*********************
+TRANISTION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+BOX SHADOWS
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include box-shadow(inset 0 0 4px rgba(0,0,0,0.22));
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdue it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+/*********************
+BUTTONS
+*********************/
+.button, .button:visited {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: 1px solid #8a3900;
+  border-top-color: #a84600;
+  border-left-color: #a84600;
+  padding: .2em .5em;
+  color: white;
+  display: inline-block;
+  font-size: .9em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  margin-bottom: 1.5em;
+  line-height: 1.3em;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  -border-radius: 0.4em;
+  border-radius: 0.4em;
+  background-color: #cc5500;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#cc5500), to(#b34a00));
+  background-image: -webkit-linear-gradient(top, #cc5500, #b34a00);
+  background-image: -moz-linear-gradient(top, #cc5500, #b34a00);
+  background-image: -o-linear-gradient(top, #cc5500, #b34a00);
+  background-image: linear-gradient(to bottom, #cc5500, #b34a00); }
+  .button.square, .button:visited.square {
+    -webkit-border-radius: 0em;
+    -moz-border-radius: 0em;
+    -ms-border-radius: 0em;
+    -o-border-radius: 0em;
+    -border-radius: 0em;
+    border-radius: 0em; }
+  .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
+    color: white;
+    border: 1px solid #8a3900;
+    border-top-color: #662b00;
+    border-left-color: #662b00;
+    background-color: #b34a00;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#b34a00), to(#994000));
+    background-image: -webkit-linear-gradient(top, #b34a00, #994000);
+    background-image: -moz-linear-gradient(top, #b34a00, #994000);
+    background-image: -o-linear-gradient(top, #b34a00, #994000);
+    background-image: linear-gradient(to bottom, #b34a00, #994000); }
+  .button:active, .button:visited:active {
+    background-color: #b34a00;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#b34a00), to(#cc5500));
+    background-image: -webkit-linear-gradient(top, #b34a00, #cc5500);
+    background-image: -moz-linear-gradient(top, #b34a00, #cc5500);
+    background-image: -o-linear-gradient(top, #b34a00, #cc5500);
+    background-image: linear-gradient(to bottom, #b34a00, #cc5500); }
+  .button.blue, .button.blue:visited, .button:visited.blue, .button:visited.blue:visited {
+    border-color: #619399;
+    text-shadow: 0 1px 1px #619399;
+    background-color: #7fa9ae;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#7fa9ae), to(#6f9fa4));
+    background-image: -webkit-linear-gradient(top, #7fa9ae, #6f9fa4);
+    background-image: -moz-linear-gradient(top, #7fa9ae, #6f9fa4);
+    background-image: -o-linear-gradient(top, #7fa9ae, #6f9fa4);
+    background-image: linear-gradient(to bottom, #7fa9ae, #6f9fa4);
+    -webkit-box-shadow: inset 0 0 3px #b1cbce;
+    -moz-box-shadow: inset 0 0 3px #b1cbce;
+    -ms-box-shadow: inset 0 0 3px #b1cbce;
+    -o-box-shadow: inset 0 0 3px #b1cbce;
+    -box-shadow: inset 0 0 3px #b1cbce;
+    box-shadow: inset 0 0 3px #b1cbce; }
+    .button.blue:hover, .button.blue:focus, .button.blue:visited:hover, .button.blue:visited:focus, .button:visited.blue:hover, .button:visited.blue:focus, .button:visited.blue:visited:hover, .button:visited.blue:visited:focus {
+      border-color: #578489;
+      background-color: #73a1a6;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#73a1a6), to(#619399));
+      background-image: -webkit-linear-gradient(top, #73a1a6, #619399);
+      background-image: -moz-linear-gradient(top, #73a1a6, #619399);
+      background-image: -o-linear-gradient(top, #73a1a6, #619399);
+      background-image: linear-gradient(to bottom, #73a1a6, #619399); }
+    .button.blue:active, .button.blue:visited:active, .button:visited.blue:active, .button:visited.blue:visited:active {
+      background-color: #6f9fa4;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#6f9fa4), to(#7fa9ae));
+      background-image: -webkit-linear-gradient(top, #6f9fa4, #7fa9ae);
+      background-image: -moz-linear-gradient(top, #6f9fa4, #7fa9ae);
+      background-image: -o-linear-gradient(top, #6f9fa4, #7fa9ae);
+      background-image: linear-gradient(to bottom, #6f9fa4, #7fa9ae); }
+  .button.black, .button.black:visited, .button:visited.black, .button:visited.black:visited {
+    border-color: #1a1a1a;
+    text-shadow: 0 1px 1px #1a1a1a;
+    background-color: #7fa9ae;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#7fa9ae), to(#262626));
+    background-image: -webkit-linear-gradient(top, #7fa9ae, #262626);
+    background-image: -moz-linear-gradient(top, #7fa9ae, #262626);
+    background-image: -o-linear-gradient(top, #7fa9ae, #262626);
+    background-image: linear-gradient(to bottom, #7fa9ae, #262626);
+    -webkit-box-shadow: inset 0 0 3px #5c5c5c;
+    -moz-box-shadow: inset 0 0 3px #5c5c5c;
+    -ms-box-shadow: inset 0 0 3px #5c5c5c;
+    -o-box-shadow: inset 0 0 3px #5c5c5c;
+    -box-shadow: inset 0 0 3px #5c5c5c;
+    box-shadow: inset 0 0 3px #5c5c5c; }
+    .button.black:hover, .button.black:focus, .button.black:visited:hover, .button.black:visited:focus, .button:visited.black:hover, .button:visited.black:focus, .button:visited.black:visited:hover, .button:visited.black:visited:focus {
+      border-color: #0d0d0d;
+      background-color: #292929;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#292929), to(#1a1a1a));
+      background-image: -webkit-linear-gradient(top, #292929, #1a1a1a);
+      background-image: -moz-linear-gradient(top, #292929, #1a1a1a);
+      background-image: -o-linear-gradient(top, #292929, #1a1a1a);
+      background-image: linear-gradient(to bottom, #292929, #1a1a1a); }
+    .button.black:active, .button.black:visited:active, .button:visited.black:active, .button:visited.black:visited:active {
+      background-color: #262626;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#262626), to(#333333));
+      background-image: -webkit-linear-gradient(top, #262626, #333333);
+      background-image: -moz-linear-gradient(top, #262626, #333333);
+      background-image: -o-linear-gradient(top, #262626, #333333);
+      background-image: linear-gradient(to bottom, #262626, #333333); }
+  .button.green, .button.green:visited, .button:visited.green, .button:visited.green:visited {
+    border-color: #92b45c;
+    text-shadow: 0 1px 1px #92b45c;
+    background-color: #a9c47f;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#a9c47f), to(#9dbc6e));
+    background-image: -webkit-linear-gradient(top, #a9c47f, #9dbc6e);
+    background-image: -moz-linear-gradient(top, #a9c47f, #9dbc6e);
+    background-image: -o-linear-gradient(top, #a9c47f, #9dbc6e);
+    background-image: linear-gradient(to bottom, #a9c47f, #9dbc6e);
+    -webkit-box-shadow: inset 0 0 3px #cfdeb7;
+    -moz-box-shadow: inset 0 0 3px #cfdeb7;
+    -ms-box-shadow: inset 0 0 3px #cfdeb7;
+    -o-box-shadow: inset 0 0 3px #cfdeb7;
+    -box-shadow: inset 0 0 3px #cfdeb7;
+    box-shadow: inset 0 0 3px #cfdeb7; }
+    .button.green:hover, .button.green:focus, .button.green:visited:hover, .button.green:visited:focus, .button:visited.green:hover, .button:visited.green:focus, .button:visited.green:visited:hover, .button:visited.green:visited:focus {
+      border-color: #85a94e;
+      background-color: #a0be71;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#a0be71), to(#92b45c));
+      background-image: -webkit-linear-gradient(top, #a0be71, #92b45c);
+      background-image: -moz-linear-gradient(top, #a0be71, #92b45c);
+      background-image: -o-linear-gradient(top, #a0be71, #92b45c);
+      background-image: linear-gradient(to bottom, #a0be71, #92b45c); }
+    .button.green:active, .button.green:visited:active, .button:visited.green:active, .button:visited.green:visited:active {
+      background-color: #9dbc6e;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#9dbc6e), to(#a9c47f));
+      background-image: -webkit-linear-gradient(top, #9dbc6e, #a9c47f);
+      background-image: -moz-linear-gradient(top, #9dbc6e, #a9c47f);
+      background-image: -o-linear-gradient(top, #9dbc6e, #a9c47f);
+      background-image: linear-gradient(to bottom, #9dbc6e, #a9c47f); }
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Grid Stylesheet
+
+I've seperated the grid so you can swap it out easily. It's
+called at the top the style.scss stylesheet.
+
+There are a ton of grid solutions out there. You should definitely
+experiment with your own. Here are some recommendations:
+
+http://gridsetapp.com - Love this site. Responsive Grids made easy.
+http://susy.oddbird.net/ - Grids using Compass. Very elegant.
+http://gridpak.com/ - Create your own responsive grid.
+
+The grid below is a combination of the 1140 grid and Twitter Boostrap. 
+I liked 1140 but Boostrap's grid was way more detailed so I merged them 
+together, let's see how this works out. If you want to use 1140, the original 
+values are commented out on each line.
+
+******************************************************************/
+.onecol {
+  width: 5.801104972%; }
+
+/* 4.85%;  } /* grid_1  */
+.twocol {
+  width: 14.364640883%; }
+
+/* 13.45%; } /* grid_2  */
+.threecol {
+  width: 22.928176794%; }
+
+/* 22.05%; } /* grid_3  */
+.fourcol {
+  width: 31.491712705%; }
+
+/* 30.75%; } /* grid_4  */
+.fivecol {
+  width: 40.055248616%; }
+
+/* 39.45%; } /* grid_5  */
+.sixcol {
+  width: 48.618784527%; }
+
+/* 48%;    } /* grid_6  */
+.sevencol {
+  width: 57.182320438000005%; }
+
+/* 56.75%; } /* grid_7  */
+.eightcol {
+  width: 65.74585634900001%; }
+
+/* 65.4%;  } /* grid_8  */
+.ninecol {
+  width: 74.30939226%; }
+
+/* 74.05%; } /* grid_9  */
+.tencol {
+  width: 82.87292817100001%; }
+
+/* 82.7%;  } /* grid_10 */
+.elevencol {
+  width: 91.436464082%; }
+
+/* 91.35%; } /* grid_11 */
+.twelvecol {
+  width: 99.999999993%; }
+
+/* 100%;   } /* grid_12 */
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
+  position: relative;
+  float: left;
+  margin-left: 2.762430939%; }
+
+.first {
+  margin-left: 0;
+  padding: 2% 0 2% 2%; }
+
+.last {
+  float: right;
+  padding: 2% 2% 2% 0; }
+
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: 481px and Up Stylesheet
+
+This stylesheet is loaded for larger devices. It's set to 
+481px because at 480px it would load on a landscaped iPhone.
+This isn't ideal because then you would be loading all those
+extra styles on that same mobile connection. 
+
+A word of warning. This size COULD be a larger mobile device,
+so you still want to keep it pretty light and simply expand
+upon your base.scss styles.
+
+******************************************************************/
+.module {
+  width: 48%;
+  float: left; }
+  .module.left {
+    margin-right: 4%; }
+
+.searchBox {
+  padding: 0 2% 0 0; }
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/* entry content */
+.entry-content {
+  /* at this larger size, we can start to align images */ }
+  .entry-content .alignleft, .entry-content img.alignleft {
+    margin-right: 1.5em;
+    display: inline;
+    float: left; }
+  .entry-content .alignright, .entry-content img.alignright {
+    margin-left: 1.5em;
+    display: inline;
+    float: right; }
+  .entry-content .aligncenter, .entry-content img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both; }
+
+/* end .entry-content */
+/*********************
+FOOTER STYLES
+*********************/
+/*
+check your menus here. do they look good?
+do they need tweaking?
+*/
+/* end .footer-links */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+.wrap {
+  max-width: 1280px; }
+
+/*********************
+HEADER SYTLES
+*********************/
+#logo {
+  margin: .75em 0 0 1.5%;
+  float: left;
+  width: 65%;
+  max-width: 557px; }
+
+.searchBox {
+  float: right;
+  margin: 2em 0 0 0;
+  width: 30%;
+  text-align: right; }
+
+/*********************
+NAVIGATION STYLES
+*********************/
+#menu-top-menu {
+  background-color: #e0d2b0;
+  float: left;
+  margin: 0 0 0;
+  padding-left: 2%;
+  width: 100%;
+  border-top: 1px solid #d9c89e;
+  border-bottom: 1px solid #d9c89e;
+  font-size: .9em; }
+
+#menu-ancillary-menu {
+  float: right;
+  font-size: .8em;
+  text-align: right;
+  padding-right: 1.5%;
+  margin-bottom: 0;
+  border-top: 1px solid #d9c89e; }
+  #menu-ancillary-menu li a {
+    padding: .2em .67em;
+    font-weight: bold;
+    text-decoration: none; }
+  #menu-ancillary-menu li:first-of-type > a {
+    margin-left: 0em; }
+  #menu-ancillary-menu li.current-page-ancestor > a, #menu-ancillary-menu li.current-menu-item > a {
+    color: #7fa9ae; }
+  #menu-ancillary-menu li:first-of-type ul.sub-menu li, #menu-ancillary-menu li:first-of-type ul.children li {
+    margin-left: 0; }
+  #menu-ancillary-menu ul.sub-menu,
+  #menu-ancillary-menu ul.children {
+    font-size: 1em; }
+    #menu-ancillary-menu ul.sub-menu li,
+    #menu-ancillary-menu ul.children li {
+      margin-left: -2px; }
+      #menu-ancillary-menu ul.sub-menu li a,
+      #menu-ancillary-menu ul.children li a {
+        font-weight: normal; }
+
+.ut-menu ul {
+  display: block;
+  width: 80%;
+  float: left;
+  margin: 1.75em 0 0 .9%;
+  padding: 0;
+  font-size: .6em;
+  text-transform: uppercase;
+  line-height: .6em; }
+  .ut-menu ul li a {
+    padding: .2em 1em;
+    border-right: 1px solid #564722;
+    font-weight: normal;
+    color: white;
+    display: block;
+    text-decoration: none; }
+    .ut-menu ul li a:hover {
+      background-color: transparent;
+      text-decoration: underline; }
+  .ut-menu ul li:last-of-type > a {
+    border-right: none; }
+  .ut-menu ul li:first-of-type > a {
+    margin-left: 0em; }
+
+.nav {
+  border: 0;
+  display: block;
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */ }
+  .nav li {
+    display: inline-block;
+    margin-right: -3px;
+    position: relative;
+    /*
+    plan your menus and drop-downs wisely.
+    */
+    /* showing sub-menus */ }
+    .nav li:first-of-type > a {
+      margin-left: -1em; }
+    .nav li.current-page-ancestor > a, .nav li.current-menu-item > a {
+      color: #0068bd; }
+    .nav li.make-gift {
+      background: url("../images/makeagift-32x32.png") no-repeat;
+      display: block;
+      float: right;
+      margin: .4% 2% .2% 0;
+      text-indent: -9999px;
+      width: 32px;
+      height: 32px; }
+      .nav li.make-gift:hover a {
+        background-color: transparent; }
+    .nav li a {
+      border-bottom: none;
+      font-weight: bold;
+      display: block;
+      color: #003057;
+      text-decoration: none;
+      padding: .67em .6em;
+      /*
+      you can use hover styles here even though this size
+      has the possibility of being a mobile device.
+      */ }
+      .nav li a:hover, .nav li a:focus {
+        color: white; }
+    .nav li:hover > a {
+      background-color: #d2be8c; }
+    .nav li ul.sub-menu,
+    .nav li ul.children {
+      width: 200px;
+      border: 1px solid #d2be8c;
+      border-top: 0;
+      position: absolute;
+      display: none;
+      z-index: 8999;
+      font-size: .8em;
+      text-align: left;
+      /* highlight sub-menu current page */ }
+      .nav li ul.sub-menu li,
+      .nav li ul.children li {
+        /*
+        if you need to go deeper, go nuts
+        just remember deeper menus suck
+        for usability. k, bai.
+        */ }
+        .nav li ul.sub-menu li:first-of-type > a,
+        .nav li ul.children li:first-of-type > a {
+          margin-left: 0; }
+        .nav li ul.sub-menu li a,
+        .nav li ul.children li a {
+          padding-left: 1em;
+          border-right: 0;
+          display: block;
+          width: 200px;
+          border-bottom: 1px solid #d9c89e;
+          background-color: #d2be8c; }
+        .nav li ul.sub-menu li:last-child a,
+        .nav li ul.children li:last-child a {
+          border-bottom: 0; }
+    .nav li:hover ul {
+      top: auto;
+      display: block; }
+
+/* end .nav */
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.widget ul li a:hover {
+  color: #cc5500;
+  text-decoration: underline; }
+.widget.simple-section-nav .widgettitle:hover {
+  background-color: #cc5500; }
+
+.widgettitle a:hover {
+  color: white; }
+
+/*********************
+FOOTER STYLES
+*********************/
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+.footer-links ul li {
+  /*
+  be careful with the depth of your menus.
+  it's very rare to have multi-depth menus in
+  the footer.
+  */ }
+
+/* end .footer-links */
+/* HOME STYLES */
+.home .threecol {
+  margin-left: 0;
+  width: 21.9282%; }
+.home .ninecol {
+  width: 77.3094%; }
+
+/**** FLEXSLIDER ****/
+.flexslider {
+  max-width: none;
+  padding-bottom: 2.1em;
+  border-bottom: none; }
+  .flexslider .flex-control-nav {
+    float: none;
+    position: absolute;
+    bottom: 0;
+    border-top: 2px solid #d9c89e;
+    border-bottom: 2px dashed #d9c89e;
+    text-align: right;
+    padding-right: 2%;
+    width: 98%; }
+    .flexslider .flex-control-nav li {
+      display: inline-block;
+      margin-bottom: 0; }
+      .flexslider .flex-control-nav li a {
+        padding: .4em .5em; }
+        .flexslider .flex-control-nav li a:hover {
+          cursor: pointer;
+          background-color: #cc5500;
+          color: white; }
+        .flexslider .flex-control-nav li a.flex-active {
+          background-color: #e0d2b0; }
+          .flexslider .flex-control-nav li a.flex-active:hover {
+            color: #cc5500;
+            cursor: default; }
+  .flexslider .viewall {
+    float: none;
+    display: inline-block;
+    position: absolute;
+    bottom: .2em;
+    padding: .3em .2em .2em;
+    z-index: 100;
+    width: auto; }
+    .flexslider .viewall:hover {
+      background-color: #cc5500;
+      color: white; }
+  .flexslider .copy, .flexslider .img {
+    float: left;
+    position: relative; }
+  .flexslider .copy {
+    margin-right: 2%;
+    width: 50%;
+    background: none;
+    color: #333333;
+    padding: 0;
+    font-size: .9em; }
+    .flexslider .copy a {
+      color: #cc5500; }
+      .flexslider .copy a:hover {
+        color: #994000; }
+  .flexslider h2 {
+    font-size: 1.4em;
+    line-height: 1.2em;
+    margin-bottom: .3em; }
+  .flexslider .img {
+    width: 46%;
+    position: relative; }
+    .flexslider .img a {
+      border: 5px solid #d9c89e;
+      display: block;
+      line-height: 0; }
+      .flexslider .img a:hover {
+        border-color: #c3a967; }
+
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop. 
+
+******************************************************************/
+#logo {
+  width: 50%;
+  margin-bottom: .5em; }
+
+#menu-top-menu {
+  font-size: .9em; }
+
+#menu-ancillary-menu {
+  width: 48%;
+  border-top: none; }
+  #menu-ancillary-menu li a {
+    border-right: 1px solid #d9c89e; }
+  #menu-ancillary-menu li:last-of-type > a {
+    border-right: none; }
+
+.nav li.make-gift {
+  background: url("../images/makeagift_front.jpg") no-repeat;
+  display: block;
+  float: right;
+  margin: .4% 2% .2% 0;
+  text-indent: -9999px;
+  width: 125px;
+  height: 34px; }
+  .nav li.make-gift:hover a {
+    background-color: transparent; }
+.nav li a {
+  padding: .67em 1em; }
+
+.flexslider {
+  padding-bottom: 0; }
+  .flexslider h2 {
+    font-size: 1.7em;
+    margin-bottom: .2em; }
+  .flexslider .flex-control-nav {
+    width: 52%; }
+  .flexslider .copy {
+    font-size: 1em; }
+
+/* 
+you can call the larger styles if you want, but there's really no need 
+*/
+/******************************************************************
+ADDITIONAL IE FIXES
+These fixes are now ONLY seen by IE, so you don't have to worry
+about using prefixes, although it's best practice. For more info
+on using Modernizr classes, check out this link:
+http://www.modernizr.com/docs/
+******************************************************************/
+/*
+For example, you can use something like:
+
+.no-textshadow .class { ... }
+
+You can also target specific versions by using the classes applied to
+the html element. These can sometimes change, so take a look inside the
+header.php file to see what they are:
+
+
+.lt-ie8 .class { ... }
+
+*/

@@ -1,0 +1,64 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop. 
+
+******************************************************************/
+#logo {
+	width:50%;
+	margin-bottom:.5em;
+}
+
+.nav.top-nav {
+	font-size:.9em;
+}
+
+.nav {
+	li {
+		&.make-gift {
+			background: url('../images/makeagift_front.jpg') no-repeat;
+			display:block;
+			float:right;
+			margin:.25em 2% 0;
+			text-indent:-9999px;
+			width:125px;
+			height:34px;
+
+			&:hover a {
+				background-color: transparent;
+			}
+		}
+
+		a {
+			padding: .67em 1em;
+		}
+	}
+}
+
+.home-flexslider {
+
+	padding-bottom:0;
+	
+	h2 {
+		font-size: 1.7em;
+		margin-bottom:.2em;
+	}
+
+	.mmflex-control-nav {
+		width: 52%;
+	}
+
+	.copy {
+		font-size:1em;
+	}
+}
+
+.module {
+	h3 {
+		font-size:1.2em;
+	}
+}
