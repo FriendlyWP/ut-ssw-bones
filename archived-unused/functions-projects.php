@@ -82,12 +82,8 @@ function display_projects_table($currentCat = false) {
 	                    // First check for the new, post-connected way; then choose-from-dropdown way of adding researchers; then original.
 
 	                    if ( $post->connected ) {
-	                    	//var_dump($post);
 		                    foreach ( $post->connected as $post ) : setup_postdata( $post );
-		                    	echo '<a href="' . get_permalink() . '">';
-		                    	echo get_the_title();
-		                    	echo '</a>';
-		                    	echo '<br />';
+		                    	echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a><br />';
 		                    endforeach;
 		                    //wp_reset_postdata();
 		                } elseif ( get_field('project_researchers') ) {
@@ -117,30 +113,30 @@ function display_projects_table($currentCat = false) {
 	                        // USING THE OLD FIELDS                                       
 	                        // if Researcher 1 exists...
 	                        if (get_custom_field_value('research_pi_1', false)) {
-	                           // echo '<a href="'. get_bloginfo('url') . '/faculty-and-staff/directory/';
-	                           // get_custom_field_value('research_pi_home1', true);
-	                          //  echo '">';
+	                            echo '<a href="'. get_bloginfo('url') . '/faculty-and-staff/directory/';
+	                            get_custom_field_value('research_pi_home1', true);
+	                            echo '">';
 	                            get_custom_field_value('research_pi_1', true);
-	                            //echo '</a>';
+	                            echo '</a>';
 	                            }
 	                        // if Researcher 2 exists...
 	                        if (get_custom_field_value('research_pi_2', false)) {
 	                            echo '<br />';
-	                           // echo '<a href="'. get_bloginfo('url') . '/faculty-and-staff/directory/';
-	                           // get_custom_field_value('research_pi_home2', true);
-	                           // echo '">';
+	                            echo '<a href="'. get_bloginfo('url') . '/faculty-and-staff/directory/';
+	                            get_custom_field_value('research_pi_home2', true);
+	                            echo '">';
 	                            get_custom_field_value('research_pi_2', true);
-	                          //  echo '</a>';
+	                            echo '</a>';
 	                        }
 	                        // if Researcher 3 exists...
 	                        if (get_custom_field_value('research_pi_3', false)) {
-	                           // echo '<br />';
-	                          //  echo '<a href="'. get_bloginfo('url') . '/faculty-and-staff/directory/';
-	                         //   get_custom_field_value('research_pi_home3', true);
-	                           // echo '">';
+	                            echo '<br />';
+	                            echo '<a href="'. get_bloginfo('url') . '/faculty-and-staff/directory/';
+	                            get_custom_field_value('research_pi_home3', true);
+	                            echo '">';
 	                            get_custom_field_value('research_pi_3', true);
-	                          //  echo '</a>';
-	                        } 
+	                            echo '</a>';
+	                        }
 	                    }
 					// END RESEARCHER NAMES
 	                   ?>

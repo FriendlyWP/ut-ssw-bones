@@ -152,7 +152,7 @@ function cpts() {
 		'label'               => 'Projects',
 		'description'         => '',
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'revisions','editor','author',),
+		'supports'            => array( 'title', 'revisions','editor','author','custom-fields'),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
